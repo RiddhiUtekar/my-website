@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔐 PAGE PROTECTION -->
+<script>
+if(localStorage.getItem("isAdminLoggedIn") !== "true"){
+window.location.href="admin-login.html";
+}
+</script>
+
+<nav class="navbar">
+<h2 class="logo">Admin Dashboard</h2>
+<button onclick="logoutAdmin()" class="btn">Logout</button>
+</nav>
+
+<section class="admin-section">
+<h1>All Event Bookings</h1>
+
+<table class="admin-table">
+<thead>
+<tr>
+<th>#</th>
+<th>User Name</th>
+<th>Event</th>
+<th>Date</th>
+<th>Tickets</th>
+<th>Amount</th>
+</tr>
+</thead>
+
+<tbody id="adminTable">
+</tbody>
+</table>
+
+</section>
+
+<script>
+
+// 🔓 LOGOUT
+function logoutAdmin(){
+localStorage.removeItem("isAdminLoggedIn");
+window.location.href="index.html";
+}
+
+// 📊 LOAD BOOKINGS
+let bookings = JSON.parse(localStorage.getItem("allBookings")) || [];
+
+let html = "";
+
+bookings.forEach((b,i)=>{
+html += `
+<tr>
+<td>${i+1}</td>
+<td>${b.name}</td>
+<td>${b.event}</td>
+<td>${b.date}</td>
+<td>${b.tickets}</td>
+<td>₹${b.total}</td>
+</tr>
+`;
+});
+
+document.getElementById("adminTable").innerHTML = html;
+
+</script>
+
+</body>
+</html>

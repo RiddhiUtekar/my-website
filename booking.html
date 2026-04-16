@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Event</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+<h2 class="logo">EventBook</h2>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="event.html">Events</a></li>
+<li><a href="booking.html">Book</a></li>
+</ul>
+</nav>
+
+<section class="booking-section">
+
+<h1>Book Your Event Ticket</h1>
+
+<div class="booking-container">
+
+<!-- Event Summary -->
+<div class="event-info">
+
+<img id="eventImage" src="">
+
+<h2 id="eventTitle"></h2>
+
+<p><strong>Date:</strong> <span id="eventDate"></span></p>
+<p><strong>Location:</strong> <span id="eventLocation"></span></p>
+<p><strong>Price:</strong> ₹<span id="eventPrice"></span></p>
+
+</div>
+
+<!-- Booking Form -->
+<form id="bookingForm" class="booking-form">
+
+<h2>Enter Your Details</h2>
+
+<input type="text" id="userName" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="tel" placeholder="Phone Number" required>
+
+<!-- (Optional: can remove this select, not needed) -->
+<select>
+<option>Select Event</option>
+<option>Music Concert</option>
+<option>Tech Conference</option>
+<option>Photography Workshop</option>
+<option>Startup Meetup</option>
+</select>
+
+<input type="number" id="ticketCount" placeholder="Number of Tickets" min="1" max="10" required>
+
+<p class="total-price">Total Price: ₹<span id="totalPrice">0</span></p>
+
+<h3>Payment Details</h3>
+
+<input type="text" placeholder="Card Holder Name" required>
+
+<input type="text" placeholder="Card Number" maxlength="16" required>
+
+<div class="card-row">
+<input type="text" placeholder="MM/YY" required>
+<input type="text" placeholder="CVV" maxlength="3" required>
+</div>
+
+<button type="submit" class="btn">Confirm Booking</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 EventBook | Book Amazing Experiences</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

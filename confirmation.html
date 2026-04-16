@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmed</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+<h2 class="logo">EventBook</h2>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="event.html">Events</a></li>
+<li><a href="booking.html">Book</a></li>
+</ul>
+</nav>
+
+<section class="confirmation-section">
+
+<div class="confirmation-card">
+
+<div class="success-icon">✔</div>
+
+<h1>Booking Confirmed!</h1>
+<p>Your ticket has been successfully booked.</p>
+
+<!-- 🎟 TICKET UI -->
+<div class="ticket-card">
+
+<div class="ticket-header">
+<h2 id="cEvent"></h2>
+<p>🎟 Entry Ticket</p>
+</div>
+
+<img id="cImage" class="ticket-image">
+
+<div class="ticket-body">
+
+<p><strong>Name:</strong> <span id="cName"></span></p>
+<p><strong>Date:</strong> <span id="cDate"></span></p>
+<p><strong>Location:</strong> <span id="cLocation"></span></p>
+<p><strong>Tickets:</strong> <span id="cTickets"></span></p>
+
+</div>
+
+<div class="ticket-footer">
+
+<p>Total Paid: ₹<span id="cTotal"></span></p>
+
+<img id="qrCode" alt="QR Code">
+
+<p class="ticket-id">Ticket ID: <span id="ticketId"></span></p>
+
+</div>
+
+</div>
+
+<div class="confirmation-buttons">
+<a href="event.html" class="btn">Explore More Events</a>
+<a href="index.html" class="btn secondary-btn">Back to Home</a>
+<button onclick="printTicket()" class="btn">Download / Print Ticket</button>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 EventBook | Enjoy Your Event</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+
+const data = JSON.parse(localStorage.getItem("eventData"));
+
+if(data){
+
+document.getElementById("cImage").src = data.image;
+document.getElementById("cEvent").innerText = data.name;
+document.getElementById("cDate").innerText = data.date;
+document.getElementById("cLocation").innerText = data.location;
+
+document.getElementById("cName").innerText = data.userName;
+document.getElementById("cTickets").innerText = data.tickets;
+document.getElementById("cTotal").innerText = data.total;
+
+// Ticket ID
+const ticketId = "EVT" + Math.floor(Math.random()*100000);
+document.getElementById("ticketId").innerText = ticketId;
+
+// QR Code
+const qrData = `${data.name} | ${data.userName} | ${ticketId}`;
+document.getElementById("qrCode").src =
+"https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=" + encodeURIComponent(qrData);
+
+}
+
+function printTicket(){
+window.print();
+}
+
+</script>
+
+</body>
+</html>

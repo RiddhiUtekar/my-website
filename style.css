@@ -1,0 +1,308 @@
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* 🌌 GLOBAL BACKGROUND IMAGE */
+body{
+    background: url(https://i.pinimg.com/1200x/0b/19/37/0b1937722704a38bb35878dc4ae1eea7.jpg) center/cover no-repeat fixed;
+    min-height:100vh;
+    color:#fff;
+}
+
+/* 🌙 DARK OVERLAY */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    z-index:-1;
+}
+
+/* 💎 GLASS EFFECT FOR SECTIONS */
+section{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(4px);
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background: rgba(0,0,0,0.5);
+backdrop-filter: blur(6px);
+color:white;
+}
+
+.nav-links{
+list-style:none;
+display:flex;
+}
+
+.nav-links li{
+margin-left:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* HERO */
+.hero{
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:40px;
+background: transparent;
+}
+
+.hero-text h1{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+margin-bottom:20px;
+max-width:600px;
+}
+
+.btn{
+padding:12px 25px;
+background:#ff7a18;
+color:white;
+text-decoration:none;
+border-radius:25px;
+}
+
+/* SLIDER */
+.slider-section{
+padding:60px;
+text-align:center;
+}
+
+.slider{
+display:flex;
+overflow-x:auto;
+scroll-behavior:smooth;
+gap:20px;
+margin-top:30px;
+}
+
+.slide{
+min-width:250px;
+background:rgba(255,255,255,0.15);
+padding:30px;
+border-radius:10px;
+backdrop-filter: blur(6px);
+}
+
+/* FEATURES */
+.features{
+padding:60px;
+text-align:center;
+}
+
+.feature-container{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.feature-card{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:10px;
+width:250px;
+backdrop-filter: blur(6px);
+}
+
+/* FOOTER */
+footer{
+background:rgba(0,0,0,0.6);
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+/* EVENTS PAGE */
+.events-page{
+padding:60px;
+text-align:center;
+}
+
+.event-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.event-card{
+background:rgba(255,255,255,0.15);
+border-radius:12px;
+overflow:hidden;
+backdrop-filter: blur(6px);
+transition:transform 0.3s;
+}
+
+.event-card:hover{
+transform:translateY(-10px);
+}
+
+.event-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.event-card h3{
+margin:15px 0 5px;
+}
+
+.event-card p{
+margin:5px 0;
+}
+
+.event-card .btn{
+display:inline-block;
+margin:15px;
+padding:10px 20px;
+background:#ff7a18;
+color:white;
+border-radius:20px;
+text-decoration:none;
+}
+
+/* BOOKING PAGE */
+.booking-section{
+padding:60px;
+text-align:center;
+}
+
+.booking-container{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.event-info{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:12px;
+backdrop-filter: blur(6px);
+width:300px;
+text-align:left;
+}
+
+.event-info img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.booking-form{
+background:rgba(255,255,255,0.15);
+padding:30px;
+border-radius:12px;
+backdrop-filter: blur(6px);
+width:320px;
+display:flex;
+flex-direction:column;
+}
+
+.booking-form input,
+.booking-form select{
+margin:10px 0;
+padding:12px;
+border:none;
+border-radius:6px;
+}
+
+.card-row{
+display:flex;
+gap:10px;
+}
+
+.card-row input{
+flex:1;
+}
+
+/* CONFIRMATION PAGE */
+.confirmation-section{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:70vh;
+padding:40px;
+}
+
+.confirmation-card{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:12px;
+backdrop-filter: blur(6px);
+text-align:center;
+max-width:400px;
+}
+
+.success-icon{
+font-size:50px;
+color:#4CAF50;
+margin-bottom:15px;
+}
+
+.total-price{
+margin-top:10px;
+font-weight:bold;
+color:#ffd166;
+font-size:18px;
+}
+
+/* TICKET DESIGN */
+.ticket-card{
+background:rgba(255,255,255,0.15);
+border-radius:15px;
+overflow:hidden;
+max-width:350px;
+margin:20px auto;
+backdrop-filter: blur(6px);
+}
+
+.ticket-header{
+background:linear-gradient(90deg,#667eea,#764ba2);
+color:white;
+padding:20px;
+}
+
+.ticket-body{
+padding:20px;
+}
+
+.ticket-footer{
+background:rgba(0,0,0,0.4);
+padding:15px;
+font-weight:bold;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero-text h1{font-size:28px;}
+.feature-container{flex-direction:column;align-items:center;}
+}

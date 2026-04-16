@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="login-section">
+<div class="login-card">
+
+<h1>Admin Login</h1>
+
+<input type="text" id="adminUser" placeholder="Username">
+<input type="password" id="adminPass" placeholder="Password">
+
+<button onclick="loginAdmin()" class="btn">Login</button>
+
+<p id="error"></p>
+
+</div>
+</section>
+
+<script>
+
+function loginAdmin(){
+
+const user = document.getElementById("adminUser").value;
+const pass = document.getElementById("adminPass").value;
+
+// demo admin credentials
+if(user === "admin" && pass === "1234"){
+localStorage.setItem("isAdminLoggedIn","true");
+window.location.href="admin.html";
+}
+else{
+document.getElementById("error").innerText="Invalid Login!";
+}
+
+}
+
+</script>
+
+</body>
+</html>
